@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Results page</h1>
+  You entered the following information:<br/>
+    <strong>Size: </strong>{{ size }}<br/>
+    <strong>Weight: </strong>{{ weight }}<br/>
+    <strong>Sweetness: </strong>{{ sweetness }}<br/>
+    <strong>Softness: </strong>{{ softness }}<br/>
+    <strong>Harvest Time: </strong>{{ harvestTime }}<br/>
+    <strong>Ripeness: </strong>{{ ripeness }}<br/>
+    <strong>Acidity: </strong>{{ acidity }}<br/>
+<!--  If prediction == 1, print Prediction: Good Quality, else Bad Quality  -->
+    {% if prediction == 1 %}
+        <h2>Prediction: Good Quality</h2>
+        {% load static %}
+        <img src="https://media1.tenor.com/m/B37pEz63BOEAAAAd/banana-cat-banana-cat-heart.gif" alt="Heart cat" width="300" height="300">
+        <h3 style="color: green">Your banana is GOOD!</h3>
+    {% else %}
+        <h2>Prediction: Bad Quality</h2>
+        <img src="https://media1.tenor.com/m/MQDyV2T6m3MAAAAd/crying-cat.gif" alt="Crying cat" height="300" width="300"/>
+        <h3 style="color: red">Your banana is BAD!</h3>
+    {% endif %}
+    <br/>
+    <a href="/">Back to home</a>
+{% endblock content %}
